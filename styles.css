@@ -1,3 +1,14 @@
 .tick{
     font-size: 20px;
+    color:  #eae9e9;
+}
+text{
+    fill:  #eae9e9;
+}
+path, line{
+    stroke: #eae9e9;
+}
+body{
+    background-color: #333131;
+    color: white;
 }
