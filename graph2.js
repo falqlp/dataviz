@@ -80,7 +80,7 @@ function doSVG(){
         .attr("x",- (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("Prix (k€)");
+        .text("Prix (k  €)");
 }
 
 function linearRegression(y, x){
