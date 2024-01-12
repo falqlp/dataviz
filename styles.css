@@ -15,12 +15,48 @@ body{
 
 #slider {
     overflow: hidden;
-    width: 1000px;
-    height: 500px;
+    width: 1200px;
+    height: 600px;
 }
 
 .slide {
-    width: 1000px;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 600px;
     float: left;
+}
+
+.Titre {
+    
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 200%;
+}
+
+.graphe1 {
+    margin-block-start: 10%;
+    align-items: center;
+    text-align: center;
+}
+
+.secondpart {
+    display: flex;
+    flex-direction: row;    
+}
+
+.Textexplicatif {
+    margin-block-start: 1%;
+    text-align: justify;
+    
+}
+
+h1 {
+    font-size: 400%;
+    text-align: center;
+}
+
+.border {
+    border: solid white;
 }
