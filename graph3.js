@@ -1,7 +1,12 @@
-function getTreeMap(){
+function updateGraph3(marque){
     var margin = {top: 10, right: 10, bottom: 10, left: 10},
         width = 1000 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
+
+    var svgExists = d3.select(".graph3").select("svg");
+    if (!svgExists.empty()) {
+        svgExists.remove();
+    }
 
 // append the svg object to the body of the page
     var svg = d3.select(".graph3")
@@ -13,16 +18,15 @@ function getTreeMap(){
             "translate(" + margin.left + "," + margin.top + ")");
 
 // Read data
-    data = data.filter((d)=>{
-        return d.Marque === 'Dacia'
+    let dataBis = data.filter((d)=>{
+        return d.Marque === marque
     })
-    data.push({Nom: 'origin', parent:'', indicateur:null})
-    console.log(data)
+    dataBis.push({Nom: 'origin', parent:'', indicateur:null})
     // stratify the data: reformatting for d3.js
     var root = d3.stratify()
         .id(function(d) { return d.Nom; })   // Name of the entity (column name is name in csv)
         .parentId(function(d) { return d.parent; })   // Name of the parent (column name is parent in csv)
-        (data);
+        (dataBis);
     root.sum(function(d) { return d.indicateur })   // Compute the numeric value for each entity
 
     // Then d3.treemap computes the position of each element of the hierarchy
@@ -43,18 +47,28 @@ function getTreeMap(){
         .attr('width', function (d) { return d.x1 - d.x0; })
         .attr('height', function (d) { return d.y1 - d.y0; })
         .style("stroke", "black")
-        .style("fill", "#69b3a2");
+        .style("fill", "#87ceeb");
 
     // and to add the text labels
-    svg
-        .selectAll("text")
+    svg.selectAll("text")
         .data(root.leaves())
         .enter()
         .append("text")
-        .attr("x", function(d){ return d.x0+10})    // +10 to adjust position (more right)
-        .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
-        .text(function(d){ return d.data.Nom + ': ' + Math.floor(d.data.indicateur)})
-        .attr("font-size", "15px")
+        .attr("x", function(d) { return d.x0 + 10; }) // Position X pour le texte
+        .attr("y", function(d) { return d.y0 + 20; }) // Position Y initiale pour le texte
         .attr("fill", "white")
+        .attr("font-size", "15px")
+        .each(function(d) {
+            var text = d3.select(this),
+                lines = `${d.data.Nom}\nRapport performance/prix: ${Math.floor(d.data.indicateur)}`.split(/\n/);
+
+            lines.forEach(function (line, i) {
+                text.append("tspan")
+                    .attr("x", d.x0 + 10) // Position X pour chaque tspan
+                    .attr("y", d.y0 + 20 + i * 20) // Position Y ajustée pour chaque tspan
+                    .text(line);
+            });
+        });
+
 }
-getTreeMap()
+updateGraph3('Dacia')

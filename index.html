@@ -5,9 +5,11 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Title</title>
 </head>
 <body>
+
 <div id="slider">
     <div class="slide">
         <div class="graph1"></div>
@@ -16,9 +18,22 @@
         <div class="graph2"></div>
     </div>
 </div>
-<button id="prev">Précédent</button>
-<button id="next">Suivant</button>
+<div class="nav">
+    <button id="prev">
+        <span class="material-symbols-outlined">
+            arrow_back
+        </span>
+        <span>Précédent</span>
+    </button>
+    <button id="next">
+        <span>Suivant</span>
+        <span class="material-symbols-outlined">
+            arrow_forward
+        </span>
+    </button>
+</div>
 
+    <div class="filter"><span>Filtre:</span></div>
     <div class="graph3"></div>
 
     <div class="selector"></div>
@@ -27,5 +42,6 @@
     <script src="graph1.js"></script>
     <script src="graph3.js"></script>
     <script src="slider.js"></script>
+    <script src="filter.js"></script>
 </body>
 </html>
