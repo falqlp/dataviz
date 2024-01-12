@@ -1,23 +1,7 @@
-const marqueEfficaciteMap = {};
-data.forEach(row => {
-    if (!marqueEfficaciteMap[row.Marque]) {
-        marqueEfficaciteMap[row.Marque] = [];
-    }
-    marqueEfficaciteMap[row.Marque].push(parseFloat(row.Efficacite));
-});
-
-const moyennePrixArray = [];
-for (let marque in marqueEfficaciteMap) {
-    const total = marqueEfficaciteMap[marque].reduce((acc, efficacite) => acc + efficacite, 0);
-    const moyenne = total / marqueEfficaciteMap[marque].length;
-    moyennePrixArray.push({ marque: marque, value: moyenne });
-}
-
-
 function graph(data) {
     let margin = {top: 30, right: 30, bottom: 90, left: 65},
-        width = 1500 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+        width = 1000 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
 
     let svg = d3.select(".graph1")
         .append("svg")

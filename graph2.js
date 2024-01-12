@@ -1,6 +1,6 @@
 function doSVG(){
     const margin = {top: 20, right: 30, bottom: 40, left: 65},
-        width = 960 - margin.left - margin.right,
+        width = 1000 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
 // Création de l'élément SVG

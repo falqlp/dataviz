@@ -7,3 +7,18 @@ data.map(d => {
     d.parent = ''
     return d;
 })
+
+const marqueEfficaciteMap = {};
+data.forEach(row => {
+    if (!marqueEfficaciteMap[row.Marque]) {
+        marqueEfficaciteMap[row.Marque] = [];
+    }
+    marqueEfficaciteMap[row.Marque].push(parseFloat(row.Efficacite));
+});
+
+const moyennePrixArray = [];
+for (let marque in marqueEfficaciteMap) {
+    const total = marqueEfficaciteMap[marque].reduce((acc, efficacite) => acc + efficacite, 0);
+    const moyenne = total / marqueEfficaciteMap[marque].length;
+    moyennePrixArray.push({ marque: marque, value: moyenne });
+}

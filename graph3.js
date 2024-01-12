@@ -1,6 +1,4 @@
-// set the dimensions and margins of the graph
 function getTreeMap(){
-    // set the dimensions and margins of the graph
     var margin = {top: 10, right: 10, bottom: 10, left: 10},
         width = 445 - margin.left - margin.right,
         height = 445 - margin.top - margin.bottom;
@@ -15,14 +13,14 @@ function getTreeMap(){
             "translate(" + margin.left + "," + margin.top + ")");
 
 // Read data
-        console.log(data)
+    d3.csv('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_hierarchy_1level.csv', function(data_1) {
+        console.log(data_1, data)
         // stratify the data: reformatting for d3.js
         var root = d3.stratify()
-            .id(function(d) { return d.Nom; })   // Nom of the entity (column Nom is Nom in csv)
-            .parentId(function(d) { return d.parent; })   // Nom of the parent (column Nom is parent in csv)
+            .id(function(d) { return d.Nom; })   // Name of the entity (column name is name in csv)
+            .parentId(function(d) { return d.parent; })   // Name of the parent (column name is parent in csv)
             (data);
-        root.sum(function(d) { return +d.indicateur })   // Compute the numeric indicateur for each entity
-        console.log(root)
+        root.sum(function(d) { return d.indicateur })   // Compute the numeric value for each entity
 
         // Then d3.treemap computes the position of each element of the hierarchy
         // The coordinates are added to the root object above
@@ -31,6 +29,7 @@ function getTreeMap(){
             .padding(4)
             (root)
 
+        console.log(root.leaves())
         // use this information to add rectangles:
         svg
             .selectAll("rect")
@@ -52,8 +51,9 @@ function getTreeMap(){
             .append("text")
             .attr("x", function(d){ return d.x0+10})    // +10 to adjust position (more right)
             .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
-            .text(function(d){ return d.data.Nom})
+            .text(function(d){ return d.data.name})
             .attr("font-size", "15px")
             .attr("fill", "white")
+    })
 }
 getTreeMap()

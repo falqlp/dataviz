@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
 <body>
-    <div class="graph1"></div>
-    <div class="graph2"></div>
+<div id="slider">
+    <div class="slide">
+        <div class="graph1"></div>
+    </div>
+    <div class="slide">
+        <div class="graph2"></div>
+    </div>
+    <div class="slide" style="background-color:green;">Slide 3</div>
+</div>
+<button id="prev">Précédent</button>
+<button id="next">Suivant</button>
+
     <div class="graph3"></div>
     <div class="selector"></div>
     <script src="data.js"></script>
     <script src="graph2.js"></script>
     <script src="graph1.js"></script>
     <script src="graph3.js"></script>
+    <script src="slider.js"></script>
 </body>
 </html>
