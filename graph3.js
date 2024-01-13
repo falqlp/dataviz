@@ -54,13 +54,13 @@ function updateGraph3(marque){
         .data(root.leaves())
         .enter()
         .append("text")
-        .attr("x", function(d) { return d.x0 + 10; }) // Position X pour le texte
-        .attr("y", function(d) { return d.y0 + 20; }) // Position Y initiale pour le texte
+        .attr("x", function(d) { return d.x0 + 10; })
+        .attr("y", function(d) { return d.y0 + 20; })
         .attr("fill", "white")
         .attr("font-size", "15px")
         .each(function(d) {
             var text = d3.select(this),
-                lines = `${d.data.Nom}\nRapport performance/prix: ${Math.floor(d.data.indicateur)}`.split(/\n/);
+                lines = `${d.data.Nom}\nScore: ${Math.floor(d.data.indicateur)}`.split(/\n/);
 
             lines.forEach(function (line, i) {
                 text.append("tspan")
