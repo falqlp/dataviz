@@ -2137,7 +2137,7 @@ let data = [{
 data.map(d => {
     d.Prix = typeof d.Prix === 'string' ? +d.Prix.replace(/,/g, '') : d.Prix;
     d.Prix = d.Prix / 1000;
-    d.indicateur = 100000 / (d.Prix * d.Efficacite)
+    d.indicateur = 333333 / (d.Prix * d.Efficacite)
     d.parent = 'origin'
     return d;
 })
