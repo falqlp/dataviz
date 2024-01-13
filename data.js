@@ -2157,3 +2157,16 @@ for (let marque in marqueEfficaciteMap) {
     const moyenne = total / marqueEfficaciteMap[marque].length;
     moyennePrixArray.push({marque: marque, value: moyenne});
 }
+
+const indicators = data.map(d=>d.indicateur)
+const min = Math.round(Math.min(...indicators))
+const max = Math.round(Math.max(...indicators))
+const mean = moyenne(indicators);
+
+function moyenne(data) {
+    var somme = 0, count = data.length;
+    for (let i = 0; i < count; i++) {
+        somme+=data[i];
+    }
+    return Math.round(somme / count);
+}

@@ -1,9 +1,8 @@
 function doSVG(){
-    const margin = {top: 20, right: 30, bottom: 40, left: 65},
+    const margin = {top: 20, right: 30, bottom: 50, left: 65},
         width = 1000 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
-// Création de l'élément SVG
     const svg = d3.select(".graph2").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -21,9 +20,9 @@ function doSVG(){
 
 
 
-    const groupKeys = ["Groupe1", "Groupe2", "Groupe3"]; // Remplacez par vos critères de regroupement
+    const groupKeys = ["Groupe1", "Groupe2", "Groupe3"];
     const regressions = groupKeys.map(key => {
-        const groupData = data.filter(d => d.groupKey === key); // Filtrer les données par groupe
+        const groupData = data.filter(d => d.groupKey === key);
         const xValues = groupData.map(d => d.Efficacite);
         const yValues = groupData.map(d => +d.Prix.replace(/,/g, ''));
         return linearRegression(yValues, xValues);
@@ -35,14 +34,14 @@ function doSVG(){
 
 
     const x = d3.scaleLinear()
-        .domain([150, 250]) // Plage d'efficacité (modifiable selon les données)
+        .domain([150, 250])
         .range([0, width]);
     svg.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(x));
 
     const y = d3.scaleLinear()
-        .domain([20, 220]) // Plage de prix (modifiable selon les données)
+        .domain([20, 220])
         .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));

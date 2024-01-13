@@ -9,6 +9,10 @@ $(document).ready(function() {
     });
     selectMarque.on('change', function() {
         updateGraph3(this.value);
+        $('#nom-marque').text(this.value);
     });
     $(".filter").append(selectMarque);
+    $('#min').text(min);
+    $('#max').text(max);
+    $('#mean').text(mean);
 });

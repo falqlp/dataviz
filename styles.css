@@ -9,6 +9,7 @@ path, line{
     stroke: #eae9e9;
 }
 body{
+    font-family: 'Rubik', sans-serif;
     position: relative;
     background-color: #464343;
     color: white;
@@ -74,6 +75,7 @@ select{
     width: 100%;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 .Titre {
 
