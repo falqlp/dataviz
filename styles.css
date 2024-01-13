@@ -9,11 +9,22 @@ path, line{
     stroke: #eae9e9;
 }
 body{
-    background-color: #333131;
+    position: relative;
+    background-color: #464343;
     color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 .graph3 text{
     fill: #333131;
+}
+
+.main-part{
+    background-color: #655f5f;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #slider {
@@ -36,6 +47,12 @@ button {
     display: flex;
     align-items: center;
     padding: 5px 15px;
+    background-color: #87ceeb;
+    border: none;
+    border-radius: 4px;
+}
+button:hover{
+    background-color: #6ec0de;
 }
 
 .nav{
@@ -66,12 +83,6 @@ select{
     font-size: 200%;
 }
 
-.graphe1 {
-    margin-block-start: 10%;
-    align-items: center;
-    text-align: center;
-}
-
 .secondpart {
     display: flex;
     flex-direction: row;
@@ -84,10 +95,32 @@ select{
 }
 
 h1 {
-    font-size: 400%;
+    font-size: 40px;
     text-align: center;
 }
 
-.border {
-    border: solid white;
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: #eae9e9 1px solid;
+    padding-top: 15px;
+    background-color: #333131;
+}
+
+header{
+    border-bottom: #eae9e9 1px solid;
+    background-color: #333131;
+    width: 100%;
+    position: fixed;
+}
+
+a, a:visited{
+    color: #87ceeb;
+}
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
 }

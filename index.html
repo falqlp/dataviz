@@ -12,83 +12,78 @@
 <body>
 
 <header>
-        <h1> Les voitures électriques </h1>
-        <div class="border"></div>
-        <br />
-    </header>
-    <div id="slider">
-        <div class="slide">
-
-            <div class="Titre">Classement des marques en fonction de leurs consommations.</div>
-            <br />
-            <div class="secondpart">
-                <div class="graph1"></div>
-                <div class="Textexplicatif"> Dans ce graphique les marques sont classés en fonction de la consommation moyenne de leurs voitures électriques, nous pouvons voir que Dacia a la consommation la plus basse et Citroen a la consommation la plus élevée.</div>
+    <h1> Les voitures électriques </h1>
+</header>
+<main>
+    <div class="main-part">
+        <div id="slider">
+            <div class="slide">
+                <div class="Titre">Classement des marques en fonction de leurs consommations.</div>
+                <br />
+                <div class="secondpart">
+                    <div class="graph1"></div>
+                    <div class="Textexplicatif"> Dans ce graphique les marques sont classés en fonction de la consommation moyenne de leurs voitures électriques, nous pouvons voir que Dacia a la consommation la plus basse et Citroen a la consommation la plus élevée.</div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="Titre">Mise en lien entre la consommation et le prix des véhicules.</div>
+                <br />
+                <div class="secondpart">
+                    <div class="graph2"></div>
+                    <div class="Textexplicatif"> Dans ce graphique, on affiche toutes les voitures de notre jeu de données. Placé en fonction de leur consommation et de leur prix. La droite représente la regression linaire du résultat pour montrer la corélation entre la consommation et le prix d'une voiture. La tendance moyenne est plus c'est cher plus la consommation est grande, sauf certaine exception.</div>
+                </div>
             </div>
         </div>
+        <div class="nav">
+            <button id="prev">
+            <span class="material-symbols-outlined">
+                arrow_back
+            </span>
+                <span>Précédent</span>
+            </button>
+            <button id="next">
+                <span>Suivant</span>
+                <span class="material-symbols-outlined">
+                arrow_forward
+            </span>
+            </button>
+        </div>
+    </div>
+    <div class="main-part">
+        <div class="filter"><span>Filtre:</span></div>
         <div class="slide">
-            <div class="Titre">Mise en lien entre la consommation et le prix des véhicules.</div>
+            <div class="Titre">Nom et rapport perfomance/prix des véhicule de ... .</div>
             <br />
             <div class="secondpart">
-                <div class="graph2"></div>
-                <div class="Textexplicatif"> Dans ce graphique, on affiche toutes les voitures de notre jeu de données. Placé en fonction de leur consommation et de leur prix. La droite représente la regression linaire du résultat pour montrer la corélation entre la consommation et le prix d'une voiture. La tendance moyenne est plus c'est cher plus la consommation est grande, sauf certaine exception.</div>
+                <div class="graph3"></div>
+                <div class="Textexplicatif"> On a ici selon la marque choisie tous les véhicules électriques de notre base de données avec son nom ainsi que le rapport efficacité sur le prix. Pour avoir un ordre de grandeur la valeur min est ... et la valeur max est ... pour une moyenne autour de ... .</div>
             </div>
         </div>
     </div>
-    <div class="nav">
-    <button id="prev">
-        <span class="material-symbols-outlined">
-            arrow_back
-        </span>
-        <span>Précédent</span>
-    </button>
-    <button id="next">
-        <span>Suivant</span>
-        <span class="material-symbols-outlined">
-            arrow_forward
-        </span>
-    </button>
-</div>
-
-    <div class="filter"><span>Filtre:</span></div>
-    <div class="slide">
-        <div class="Titre">Nom et rapport perfomance/prix des véhicule de ... .</div>
-        <br />
-        <div class="secondpart">
-            <div class="graph3"></div>
-            <div class="Textexplicatif"> On a ici selon la marque choisie tous les véhicules électriques de notre base de données avec son nom ainsi que le rapport efficacité sur le prix. Pour avoir un ordre de grandeur la valeur min est ... et la valeur max est ... pour une moyenne autour de ... .</div>
-        </div>
-    </div>
-
-
-    <div class="selector"></div>
-    <script src="data.js"></script>
-    <script src="graph2.js"></script>
-    <script src="graph1.js"></script>
-    <script src="graph3.js"></script>
-    <script src="slider.js"></script>
-    <script src="filter.js"></script>
-    <footer>
-
-
-        <div> Membre du groupe:</div>
-
-        <div class="border"></div>
+</main>
+<footer>
+    <div>
+        <div> Membres du groupe:</div>
         <ul>
             <li> Falq Léo-Paul</li>
             <li> Dubanchet Alexis </li>
             <li> Magnin Gwenaël</li>
         </ul>
-
+    </div>
+    <div>
         <div> Sources :</div>
-        <div class="border"></div>
-        <div class="border"></div>
         <ul>
-            <li> Données : https://ev-database.org/ </li>
-            <li> Scalping : https://www.kaggle.com/datasets/kkhandekar/cheapest-electric-cars </li>
-            <li> Graphiques : https://d3-graph-gallery.com/</li>
+            <li> Données : <a href="https://ev-database.org/">https://ev-database.org</a></li>
+            <li> Scalping : <a href="https://www.kaggle.com/datasets/kkhandekar/cheapest-electric-cars">https://www.kaggle.com/datasets/kkhandekar/cheapest-electric-cars</a></li>
+            <li> Graphiques : <a href="https://d3-graph-gallery.com/">https://d3-graph-gallery.com</a></li>
         </ul>
-
-    </footer>
+    </div>
+</footer>
 </body>
+<script src="data.js"></script>
+<script src="graph2.js"></script>
+<script src="graph1.js"></script>
+<script src="graph3.js"></script>
+<script src="slider.js"></script>
+<script src="filter.js"></script>
 </html>
