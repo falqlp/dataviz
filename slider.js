@@ -32,7 +32,7 @@ $(document).ready(function(){
     });
 
     function startSlider() {
-        sliderInterval = setInterval(moveSlide, 10000);
+        sliderInterval = setInterval(moveSlide, 5000);
     }
 
     function resetInterval() {
